@@ -1,0 +1,25 @@
+{
+  "name": "foundation-base-lib",
+  "homepage": "https://github.com/petskratt/foundation-base",
+  "authors": [
+    "Peeter Marvet <pets@tehnokratt.net>"
+  ],
+  "description": "Updatable components for petskratt/foundation-base theme",
+  "main": "foundation-base.php",
+  "license": "MIT",
+  "dependencies": {
+    "foundation": ">= 5.5.0"
+  },
+  "ignore": [
+    "**/.*"
+  ],
+  "_release": "6f39b5b940",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6f39b5b9402d90f51948350beb0a3e6e3a9aba42"
+  },
+  "_source": "git://github.com/petskratt/foundation-base-lib.git",
+  "_target": "*",
+  "_originalSource": "petskratt/foundation-base-lib"
+}
