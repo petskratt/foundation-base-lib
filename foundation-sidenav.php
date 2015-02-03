@@ -32,7 +32,8 @@ class Foundationbase_Widget_Sidenav extends WP_Widget {
 		if(is_home() || !$post->ancestors){
 			$pid = $post->ID;
 		}else{
-			$pid = end(array_values($post->ancestors));
+		    $ancestors = array_values($post->ancestors);
+			$pid = end($ancestors);
 		}
 
 
