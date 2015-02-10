@@ -42,7 +42,7 @@ function foundationbase_script_manager() {
     	// wp_register_script template ( $handle, $src, $deps, $ver, $in_footer );
 
     	// registers modernizr script, stylesheet local path, no dependency, no version, loads in header
-    	wp_register_script('modernizr-js', get_stylesheet_directory_uri() . '/bower_components/foundation/js/vendor/modernizr.js', false, false, false);
+    	wp_register_script('modernizr-js', get_stylesheet_directory_uri() . '/lib/foundation/js/vendor/modernizr.js', false, false, false);
         wp_register_script('app-js', get_stylesheet_directory_uri() . '/js/app.min.js', array('jquery'), false, true);
 
     	// enqueue the scripts for use in theme
