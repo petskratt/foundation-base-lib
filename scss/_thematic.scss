@@ -961,9 +961,12 @@ input {
 	font-size: 80%;
 }
 
-#content {
+.entry-content {
 	ul {
 		margin-left: rem-calc(18);
+		&.gallery {
+    		margin-left: 0;
+		}
 	}
 
 	ol {
