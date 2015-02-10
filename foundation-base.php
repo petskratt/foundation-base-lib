@@ -231,3 +231,33 @@ function ngg_orbit_template( $path, $template_name = false) {
 		$path = dirname( __FILE__ ) . '/gallery-orbit.php';
 	return $path;
 }
+
+
+
+// Adds flex-video class to oEmbed videos so they are responsive
+// except for non-video embeds (as suggested by http://www.t-gk.net/2013/04/foundation-and-wordpress-embeds/ )
+
+add_filter('embed_oembed_html', 'krt_oembed_filter', 90, 3 );
+
+function krt_oembed_filter( $html, $url, $attr ) {
+
+    if (!defined('FLEXVIDEO_ASPECT') ) define('FLEXVIDEO_ASPECT', 'widescreen');
+
+    $provider = wp_oembed_get( $url, $attr );
+
+    if ( strpos($provider, 'twitter.com') !== false ||
+         strpos($provider, 'instagram.com') !== false ||
+         strpos($provider, 'photobucket.com') !== false ||
+         strpos($provider, 'polldaddy.com') !== false ||
+         strpos($provider, 'scribd.com') !== false ||
+         strpos($provider, 'smugmug.com') !== false
+    ) return $html;
+
+
+
+    if ( strpos($provider, 'vimeo.com') !== false )
+        return '<div class="flex-video vimeo ' . FLEXVIDEO_ASPECT . '">'. $html .'</div>';
+
+    return '<div class="flex-video ' . FLEXVIDEO_ASPECT . '">'. $html .'</div>';
+
+}
